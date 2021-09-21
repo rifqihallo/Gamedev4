@@ -1,7 +1,5 @@
-import pygame
-from pygame import rect
-from pygame.locals import *
-import time
+import pygame#mengimport modul pygame dan sys
+import time#mengimport modul time
 
 BLACK = (0,0,0)
 RED = (255,0,0)
@@ -12,9 +10,9 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
 
-pygame.init()
-screen = pygame.display.set_mode((640,240))
-pygame.display.set_caption('Smooth Movement')
+pygame.init()#menginisialisasi setiap submodules di pygame paket, yang dapat memuat driver dan permintaan pygame hardware sehingga siap untuk menggunakan semua perangkat pada komputer
+screen = pygame.display.set_mode((640,240))#mengatur lebar dan tinggi window
+pygame.display.set_caption('NAMA')#mengeset judul window
 
 text = "RIFQI ACHMAD FADHILLA"
 font = pygame.font.SysFont(None, 48)
@@ -43,8 +41,8 @@ while running:
             rect.size = img.get_size()
             cursor.topleft = rect.topright
 
-    screen.fill(baground)
-    screen.blit(img,rect)
+    screen.fill(baground)#Untuk Menampilkan background
+    screen.blit(img,rect)#Untuk Menampilkan IMG
     if time.time() % 1 > 0.5:
         pygame.draw.rect(screen, RED, cursor)
     pygame.display.update()
